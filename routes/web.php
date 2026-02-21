@@ -35,6 +35,15 @@ Route::post('/kategori/store', [App\Http\Controllers\Kategori::class, 'proses_da
 //Route read data kategori
 Route::get('/datakategori', [App\Http\Controllers\Kategori::class, 'read_data_kategori'])->name('read.data.kategori');
 
+//Route form edit data kategori
+Route::get('/kategori/edit/{id}', [App\Http\Controllers\Kategori::class, 'edit_data_kategori'])->name('kategori.edit');
+
+//Route proses update data kategori
+Route::post('/kategori/update/{id}', [App\Http\Controllers\Kategori::class, 'update_data_kategori'])->name('kategori.update');
+
+//Route delete data kategori
+Route::get('/kategori/delete/{id}', [App\Http\Controllers\Kategori::class, 'delete_data_kategori'])->name('kategori.delete');
+
 // Route::post('/proses_data_user', [App\Http\Controllers\AuthController::class, 'login'])->name('proses.data.user');
 
 // Route::get('/datauser', [App\Http\Controllers\user::class, 'read_data_user'])->name('read.data.user');

@@ -20,8 +20,8 @@
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->nama_kategori }}</td>
                 <td>
-                    <a href="#">Edit</a> | 
-                    <a href="#">Delete</a>
+                    <a href="{{ route('kategori.edit', $item->id) }}">Edit</a> | 
+                    <a href="{{ route('kategori.delete', $item->id) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?')">Delete</a>
             </tr>
             @endforeach
         </tbody>
