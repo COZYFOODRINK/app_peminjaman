@@ -23,4 +23,11 @@ class Kategori extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan data kategori.');
         }
     }
+
+    public function read_data_kategori()
+    {
+        $kategori = KategoriModel::get();
+
+        return view('datakategori', compact('kategori'));
+    }
 }

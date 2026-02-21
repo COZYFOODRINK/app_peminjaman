@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Kategori;
 
 Route::get('/login', function () {
     return view('login');
@@ -22,6 +23,17 @@ Route::get('/peminjam/dashboard', function () {
 })->name('peminjam.dashboard');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+//Route kategori
+Route::get('/kategori', function () {
+    return view('kategori');
+});
+
+//Route proses input kategori
+Route::post('/kategori/store', [App\Http\Controllers\Kategori::class, 'proses_data_kategori'])->name('kategori.store');
+
+//Route read data kategori
+Route::get('/datakategori', [App\Http\Controllers\Kategori::class, 'read_data_kategori'])->name('read.data.kategori');
 
 // Route::post('/proses_data_user', [App\Http\Controllers\AuthController::class, 'login'])->name('proses.data.user');
 

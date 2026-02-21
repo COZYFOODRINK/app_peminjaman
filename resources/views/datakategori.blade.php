@@ -10,19 +10,15 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
+                <th>Nama Kategori</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($users as $user)
+            @foreach($kategori as $item)
             <tr>
-                <td>{{ $user->id }}</td>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
-                <td>{{ $user->role }}</td>
+                <td>{{ $item->id }}</td>
+                <td>{{ $item->nama_kategori }}</td>
                 <td>
                     <a href="#">Edit</a> | 
                     <a href="#">Delete</a>
