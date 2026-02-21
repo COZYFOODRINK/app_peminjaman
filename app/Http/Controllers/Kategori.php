@@ -29,14 +29,14 @@ class Kategori extends Controller
     {
         $kategori = KategoriModel::get();
 
-        return view('datakategori', compact('kategori'));
+        return view('admin.datakategori', compact('kategori'));
     }
 
     //Buat Update data kategori
     public function edit_data_kategori(Request $request, $id) {
         $kategori = KategoriModel::findOrFail($id);
 
-        return view('form_update_kategori', compact('kategori'));
+        return view('admin.form_update_kategori', compact('kategori'));
     }
 
     //Buat Proses Update data kategori

@@ -26,7 +26,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //Route kategori
 Route::get('/kategori', function () {
-    return view('kategori');
+    return view('admin.kategori');
 });
 
 //Route proses input kategori
