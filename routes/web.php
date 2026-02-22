@@ -44,6 +44,15 @@ Route::post('/kategori/update/{id}', [App\Http\Controllers\Kategori::class, 'upd
 //Route delete data kategori
 Route::get('/kategori/delete/{id}', [App\Http\Controllers\Kategori::class, 'delete_data_kategori'])->name('kategori.delete');
 
+//Route ke form input alat
+Route::get('/alat', [App\Http\Controllers\Alat::class, 'index'])->name('alat.index');
+
+//Route proses input alat
+Route::post('/alat/store', [App\Http\Controllers\Alat::class, 'proses_data_alat'])->name('alat.store');
+
+//Route read data alat
+Route::get('/dataalat', [App\Http\Controllers\Alat::class, 'read_data_alat'])->name('read.data.alat');
+
 // Route::post('/proses_data_user', [App\Http\Controllers\AuthController::class, 'login'])->name('proses.data.user');
 
 // Route::get('/datauser', [App\Http\Controllers\user::class, 'read_data_user'])->name('read.data.user');
