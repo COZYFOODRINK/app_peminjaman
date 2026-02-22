@@ -53,6 +53,15 @@ Route::post('/alat/store', [App\Http\Controllers\Alat::class, 'proses_data_alat'
 //Route read data alat
 Route::get('/dataalat', [App\Http\Controllers\Alat::class, 'read_data_alat'])->name('read.data.alat');
 
+//Route form edit data alat
+Route::get('/alat/edit/{id}', [App\Http\Controllers\Alat::class, 'edit_data_alat'])->name('alat.edit');
+
+//Route proses update data alat
+Route::post('/alat/update/{id}', [App\Http\Controllers\Alat::class, 'update_data_alat'])->name('alat.update');
+
+//Route delete data alat
+Route::get('/alat/delete/{id}', [App\Http\Controllers\Alat::class, 'delete_data_alat'])->name('alat.delete');
+
 // Route::post('/proses_data_user', [App\Http\Controllers\AuthController::class, 'login'])->name('proses.data.user');
 
 // Route::get('/datauser', [App\Http\Controllers\user::class, 'read_data_user'])->name('read.data.user');

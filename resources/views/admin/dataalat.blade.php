@@ -15,6 +15,7 @@
                 <th>Nama Alat</th>
                 <th>Jumlah Alat</th>
                 <th>Harga</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +26,9 @@
                 <td>{{ $item->nama_alat }}</td>
                 <td>{{ $item->jumlah_alat }}</td>
                 <td>{{ $item->harga }}</td>
+                <td>
+                    <a href="{{ route('alat.edit', $item->id) }}">Edit</a> | 
+                    <a href="{{ route('alat.delete', $item->id) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus alat ini?')">Delete</a>
             </tr>
             @endforeach
         </tbody>
