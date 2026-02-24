@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Kategori;
+use App\Http\Controllers\Alat;
+    
 
 Route::get('/login', function () {
     return view('login');
@@ -61,6 +63,12 @@ Route::post('/alat/update/{id}', [App\Http\Controllers\Alat::class, 'update_data
 
 //Route delete data alat
 Route::get('/alat/delete/{id}', [App\Http\Controllers\Alat::class, 'delete_data_alat'])->name('alat.delete');
+
+//Route Middleware Admin
+Route::middleware(['admin'])->group(function () {
+    Route::resource('kategori', Kategori::class);
+    Route::resource('alat', Alat::class);
+});
 
 // Route::post('/proses_data_user', [App\Http\Controllers\AuthController::class, 'login'])->name('proses.data.user');
 
