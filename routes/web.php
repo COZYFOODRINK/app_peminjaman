@@ -26,6 +26,8 @@ Route::get('/peminjam/dashboard', function () {
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
+//Route Middleware Admin
+Route::middleware(['admin'])->group(function () {
 //Route kategori
 Route::get('/kategori', function () {
     return view('admin.kategori');
@@ -63,11 +65,6 @@ Route::post('/alat/update/{id}', [App\Http\Controllers\Alat::class, 'update_data
 
 //Route delete data alat
 Route::get('/alat/delete/{id}', [App\Http\Controllers\Alat::class, 'delete_data_alat'])->name('alat.delete');
-
-//Route Middleware Admin
-Route::middleware(['admin'])->group(function () {
-    Route::resource('kategori', Kategori::class);
-    Route::resource('alat', Alat::class);
 });
 
 // Route::post('/proses_data_user', [App\Http\Controllers\AuthController::class, 'login'])->name('proses.data.user');

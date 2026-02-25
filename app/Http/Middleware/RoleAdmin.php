@@ -16,10 +16,10 @@ class RoleAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->role === 'admin') {
+        if (session('user_role') === 'admin') {
             return $next($request);
         }
 
-        return redirect('/login')->with('error', 'Anda tidak memiliki akses ke halaman kategori.');      
+        return redirect('/login')->with('error', 'Anda tidak memiliki akses ke halaman ini broo.');      
     }
 }
